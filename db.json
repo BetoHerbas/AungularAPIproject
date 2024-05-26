@@ -79,22 +79,6 @@
       "description": "Soft and stylish rug, adding warmth and texture to any room.",
       "category": "Rugs",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-10-c.jpg"
-    },
-    {
-      "id": "4ded",
-      "title": "Chair",
-      "price": 1000,
-      "description": "Made of wood",
-      "category": "Office",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-b.jpg"
-    },
-    {
-      "id": "a9cb",
-      "title": "Ornament",
-      "price": 200.99,
-      "description": "Made of ceramic",
-      "category": "Decore",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-06-a.jpg"
     }
   ]
 }

@@ -25,4 +25,12 @@ export class ProductService {
     });
     return response.json();
   }
+  async deleteProduct(id: number): Promise<void> {
+    const response = await fetch(`${this.apiUrl}/${id}`, {
+      method: 'DELETE'
+    });
+    if (!response.ok) {
+      throw new Error('Failed to delete product');
+    }
+  }
 }

@@ -58,4 +58,12 @@ export class ControlPanelComponent {
       alert('Please fill out all fields');
     }
   }
+  async removeProduct(productId: number) {
+    try {
+      await this.productService.deleteProduct(productId);
+      this.productList = this.productList.filter(product => product.id !== productId);
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  }
 }

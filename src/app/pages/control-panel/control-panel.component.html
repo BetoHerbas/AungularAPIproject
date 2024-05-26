@@ -44,7 +44,7 @@
 <section class="products-container">
   @for (i of productList; track i.id) {
   <div>
-    <app-product [product]="i"></app-product>
+    <app-product [product]="i" (delete)="removeProduct($event)"></app-product>
   </div>
 
   } @empty {
