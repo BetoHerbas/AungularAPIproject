@@ -1,19 +1,53 @@
-  <h1>Products</h1>
-  <div class="example-button-row">
-    <button mat-fab extended color="primary">
-      <!-- (click)="addData()" -->
-      <mat-icon>add</mat-icon>
-      Create product
-    </button>
+<h1>Products</h1>
+<section class="form-container">
+  <section class="example-form">
+    <mat-card-title>Product form</mat-card-title>
+    <mat-card class="example-card" [formGroup]="productForm">
+      <mat-form-field floatLabel="always" class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+      <mat-form-field floatLabel="always">
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="price" type="number" class="example-right-align" placeholder="0">
+        <span matTextPrefix>$&nbsp;</span>
+        <span matTextSuffix>.00</span>
+      </mat-form-field>
+      <mat-form-field floatLabel="always" class="example-full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field floatLabel="always">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value="Bedroom">Bedroom</mat-option>
+          <mat-option value="Decore">Decore</mat-option>
+          <mat-option value="Living room">Living room</mat-option>
+          <mat-option value="Office">Office</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field floatLabel="always" class="example-full-width">
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="image">
+      </mat-form-field>
+      <div class="example-button-row">
+        <button mat-fab extended color="primary"(click)="addProduct()">
+          <mat-icon>add</mat-icon>
+          Create product
+        </button>
+      </div>
+    </mat-card>
+  </section>
+</section>
+
+
+<section class="products-container">
+  @for (i of productList; track i.id) {
+  <div>
+    <app-product [product]="i"></app-product>
   </div>
 
-  <section class="products-container">
-    @for (i of productList; track i.id) {
-        <div>
-            <app-product [product]="i"></app-product>
-        </div>
-    
-    } @empty {
-    <p>No existen productos</p>
-    }
-  </section>
+  } @empty {
+  <p>No existen productos</p>
+  }
+</section>

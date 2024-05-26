@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
 
+export class ProductService {
   apiUrl = 'http://localhost:3000/products';
   constructor() {}
 
@@ -15,7 +15,14 @@ export class ProductService {
     return (await data.json()) ?? [];
   }
 
-  // createProduct(product: Product): Observable<Product> {
-  //   return this.http.post<Product>(this.apiUrl, product);
-  // }
+  async createProduct(product: Product): Promise<Product> {
+    const response = await fetch(this.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(product)
+    });
+    return response.json();
+  }
 }
