@@ -7,7 +7,7 @@
     </section>
 
     <section class="shop-by-category">
-        <header>
+        <header class="shop-by-header">
             <h6>SHOP BY CATEGORY</h6>
             <h2>SHOP BY CATEGORY</h2>
         </header>
@@ -34,14 +34,32 @@
     </section>
 
     <section class="featured-items">
-        <header>
+        <header class="shop-by-header">
             <h6>FEATURED ITEMS</h6>
             <h2>FEATURED ITEMS</h2>
         </header>
 
         <div class="featured-items-container">
-            <h1>"items components"</h1>
+            @for (i of productList; track i.id) {
+                <div class="prueba">
+                    <app-product [product]="i"></app-product>
+                </div>
+            
+            } @empty {
+            <p>No existen productos</p>
+            }
         </div>
-
     </section>
+
+    <section class="comments">
+        <H1>COMENTARIOS</H1>
+    </section>
+
+    <section class="why-choose-us">
+        <header class="shop-by-header">
+            <h6>BEST PRODUCTS</h6>
+            <h2>WHY CHOOSE US</h2>
+        </header>
+    </section>
+
 </main>
