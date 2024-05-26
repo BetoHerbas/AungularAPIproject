@@ -1,1 +1,19 @@
-<p>control-panel works!</p>
+  <h1>Products</h1>
+  <div class="example-button-row">
+    <button mat-fab extended color="primary">
+      <!-- (click)="addData()" -->
+      <mat-icon>add</mat-icon>
+      Create product
+    </button>
+  </div>
+
+  <section class="products-container">
+    @for (i of productList; track i.id) {
+        <div>
+            <app-product [product]="i"></app-product>
+        </div>
+    
+    } @empty {
+    <p>No existen productos</p>
+    }
+  </section>
