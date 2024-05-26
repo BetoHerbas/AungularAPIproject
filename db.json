@@ -49,20 +49,12 @@
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg"
     },
     {
-      "id": "8",
-      "title": "Armchair",
-      "price": 249.99,
-      "description": "Comfortable and stylish armchair, ideal for lounging in the living room.",
-      "category": "Chairs",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-05-b.jpg"
-    },
-    {
-      "id": "05c9",
-      "title": "Sofa",
-      "price": 400.99,
-      "description": "Comfortable and stylish armchair, ideal for lounging in the living room.",
-      "category": "Living room",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-16-c.jpg"
+      "id": "60c9",
+      "title": "A",
+      "price": 2,
+      "description": "daf",
+      "category": "Office",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-02-a.jpg"
     }
   ]
 }
