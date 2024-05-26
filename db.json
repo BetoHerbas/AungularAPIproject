@@ -1,0 +1,85 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Dining Chair",
+        "price": 99.99,
+        "description": "Modern and elegant dining chair, perfect for any home.",
+        "category": "Dining Furniture",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-a.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Fabric Sofa",
+        "price": 399.99,
+        "description": "Soft and comfortable fabric sofa, ideal for relaxing in the living room.",
+        "category": "Sofas",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-b.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Coffee Table",
+        "price": 149.99,
+        "description": "Sturdy and stylish coffee table, perfect for complementing your living room.",
+        "category": "Coffee Tables",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Bed Frame",
+        "price": 299.99,
+        "description": "Durable and sleek bed frame, providing a comfortable sleep experience.",
+        "category": "Beds",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-c.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Bookshelf",
+        "price": 129.99,
+        "description": "Functional and spacious bookshelf, great for organizing your books and decorations.",
+        "category": "Shelves",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-09-a.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Desk",
+        "price": 199.99,
+        "description": "Versatile and practical desk, suitable for work or study.",
+        "category": "Desks",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-b.jpg"
+      },
+      {
+        "id": 7,
+        "title": "TV Stand",
+        "price": 179.99,
+        "description": "Sleek and modern TV stand, perfect for holding your television and media devices.",
+        "category": "Entertainment Centers",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Armchair",
+        "price": 249.99,
+        "description": "Comfortable and stylish armchair, ideal for lounging in the living room.",
+        "category": "Chairs",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-05-b.jpg"
+      },
+      {
+        "id": 9,
+        "title": "Dresser",
+        "price": 279.99,
+        "description": "Spacious and elegant dresser, providing ample storage for your clothes and accessories.",
+        "category": "Dressers",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-16-a.jpg"
+      },
+      {
+        "id": 10,
+        "title": "Rug",
+        "price": 79.99,
+        "description": "Soft and stylish rug, adding warmth and texture to any room.",
+        "category": "Rugs",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-10-c.jpg"
+      }
+    ]
+  }
+  

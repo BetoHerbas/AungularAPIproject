@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+    <img mat-card-image src="{{product.image}}" alt="Photo of a Shiba Inu">
+    <mat-card-header>
+        <mat-card-title>{{product.title}}</mat-card-title>
+        <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            Price: {{product.price}}
+        </p>
+        <p>
+            {{product.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+        <button mat-flat-button>
+            <!-- (click)="removeData()" -->
+            <!-- [disabled]="!productList.length" -->
+            <mat-icon>edit</mat-icon>
+            Edit product
+        </button>
+        <button mat-flat-button>
+            <!-- (click)="removeData()" -->
+            <!-- [disabled]="!productList.length" -->
+            <mat-icon>delete</mat-icon>
+            Remove product
+          </button>
+    </mat-card-actions>
+</mat-card>

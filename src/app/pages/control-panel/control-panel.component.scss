@@ -1,0 +1,27 @@
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.example-disabled {
+  display: inline-block;
+}
+
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
+
+.products-container{
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
