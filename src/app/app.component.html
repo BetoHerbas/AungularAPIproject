@@ -1,17 +1,14 @@
 <div class="topnav">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" [routerLink]="['home']">Navbar</a>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" [routerLink]="['home']"><img src="https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/logo-regular.png" alt="Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" [routerLink]="['home']" [routerLinkActive]="['active']">Home</a>
-        <a class="nav-item nav-link" [routerLink]="['store']" [routerLinkActive]="['active']">Store</a>
-        <a class="nav-item nav-link" [routerLink]="['admin']" [routerLinkActive]="['active']">Adminitrate</a>
-        <a class="nav-item nav-link" href="#">Features</a>
-        <a class="nav-item nav-link" href="#">Pricing</a>
-        <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      <div class="navbar-nav mx-auto">
+        <a class="nav-item nav-link" [routerLink]="['home']" routerLinkActive="active">Home</a>
+        <a class="nav-item nav-link" [routerLink]="['store']" routerLinkActive="active">Store</a>
+        <a class="nav-item nav-link" [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
       </div>
     </div>
   </nav>

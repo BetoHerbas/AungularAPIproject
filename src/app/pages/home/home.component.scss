@@ -1,0 +1,90 @@
+.main {
+    background-image: url(https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/hero-01.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    margin-top: -12vh;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-left: 5%;
+    height: 100%;
+}
+
+.main-content h1 {
+    font-size: 5rem;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: 1000;
+}
+
+.main-content h4 {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 500;
+}
+
+.main-content h6{
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 200;
+}
+
+.main-content button {
+    width: 200px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.shop-by-category{
+    background-color: purple;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shop-by-category header{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-container{
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.featured-items{
+    background-color: green;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-items header{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-items-container {
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+}

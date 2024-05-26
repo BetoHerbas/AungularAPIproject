@@ -1,0 +1,23 @@
+.navbar-custom {
+    background-color: transparent;
+    border-bottom: 0.5px solid #868686;
+    height: 12vh;
+}
+
+.navbar-custom,
+.navbar-custom .navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar-brand {
+    margin-left: 1%;
+}
+
+.navbar-custom .navbar-nav {
+    margin: 0 ;
+}
+
+.navbar-custom .navbar-nav .nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
+}
