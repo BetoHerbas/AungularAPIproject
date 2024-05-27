@@ -1,10 +1,9 @@
 .example-card {
-    max-width: 400px; 
-    margin: auto; 
-    background-color: black;
+    max-width: 250px; 
+    margin: auto; /* Centra la tarjeta horizontalmente */
     margin-top: 100px;
-    text-align: center; 
-    padding: 10px; 
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    padding: 10px; /* Añade un poco de espacio interior */
     
     img {
         margin: auto; 

@@ -48,5 +48,27 @@
       "category": "Entertainment Centers",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg"
     }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "title": "Bedroom",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-1-300x300.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Decore",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-4-400x400.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Living Room",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-3-400x400.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Office",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-2-400x400.jpg"
+    }
   ]
 }

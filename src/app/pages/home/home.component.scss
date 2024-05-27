@@ -47,10 +47,16 @@
 }
 
 .shop-by-category {
-    height: 50vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .shop-by-category header {
@@ -79,6 +85,7 @@
 
 .featured-items {
     display: flex;
+    margin-top: 100px;
     flex-direction: column;
     justify-content: center;
 }

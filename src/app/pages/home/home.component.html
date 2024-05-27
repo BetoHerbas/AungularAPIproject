@@ -11,26 +11,16 @@
             <h6>SHOP BY CATEGORY</h6>
             <h2>SHOP BY CATEGORY</h2>
         </header>
-        <!-- convertir en componente? -->
-        <div class="category-container">
-            <h1>"CATEGORIES"</h1>
-            <!-- <div class="category">
-                <img src="https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-1.jpg" alt="Category 1">
-                <h3>Living Room</h3>
-            </div>
-            <div class="category">
-                <img src="https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-2.jpg" alt="Category 2">
-                <h3>Bedroom</h3>
-            </div>
-            <div class="category">
-                <img src="https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-3.jpg" alt="Category 3">
-                <h3>Dining Room</h3>
-            </div>
-            <div class="category">
-                <img src="https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-4.jpg" alt="Category 4">
-                <h3>Office</h3>
-            </div> -->
+        <div class="categories-container">
+            @for(i of categoriesList; track i.id) {
+                <div class="prueba">
+                    <app-categories [categories]="i"></app-categories>
+                </div>
+            } @empty {
+            <p>No existen categorias</p>
+            }
         </div>
+        <!-- <app-categories></app-categories> -->
     </section>
 
     <section class="featured-items">

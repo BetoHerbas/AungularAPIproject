@@ -1,23 +1,31 @@
 import { Component, inject } from '@angular/core';
 import { ProductComponent } from '../../elements/product/product.component';
 import { Product } from '../../interfaces/product';
+import { Categories } from '../../interfaces/categories';
 import { ProductService } from '../../services/product.service';
+import { CategoriesComponent } from '../../elements/categories/categories.component';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ ProductComponent ],
+  imports: [ ProductComponent, CategoriesComponent ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   productList: Product[] = [];
+  categoriesList: Categories[] = [];
   productService: ProductService = inject(ProductService);
-  displayedColumns: string[] = ['id', 'title', 'price', 'description', 'category', 'image'];
+  categoriesService: CategoryService = inject(CategoryService);
 
   ngOnInit():void {
     this.productService.getAllProducts().then((productList: Product[]) => {
-      this.productList = productList.slice(0, 5);
+      this.productList = productList.slice(0, 6);
+    });
+
+    this.categoriesService.getAllCategories().then((categoriesList: Categories[]) => {
+      this.categoriesList = categoriesList;
     });
   }
 }
