@@ -47,4 +47,9 @@ export class ProductService {
     }
     return response.json();
   }
+
+  async getProductById(productId: number): Promise<Product> {
+    const response = await fetch(`${this.apiUrl}/${productId}`);
+    return response.json();
+  }
 }

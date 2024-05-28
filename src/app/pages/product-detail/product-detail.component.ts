@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { switchMap } from 'rxjs/operators';
 import { Product } from '../../interfaces/product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,41 +10,42 @@ import { Product } from '../../interfaces/product';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  productId!: number;
   product!: Product;
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productService: ProductService
+  ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== null) {
-      this.productId = +id;
-      this.loadProduct(this.productId);
-    } else {
-      console.error('ID del producto no encontrado');
-    }
-  }
-
-  loadProduct(id: number) {
-    this.http.get<{ products: Product[] }>('assets/db.json').subscribe(data => {
-      const product = data.products.find(p => p.id === id);
-      if (product) {
-        this.product = product;
-      } else {
-        console.error('Producto no encontrado');
-      }
-    }, error => {
-      console.error('Error cargando el archivo JSON:', error);
+    this.route.paramMap.subscribe(async params => {
+      const productId = +params.get('id')!;
+      this.product = await this.productService.getProductById(productId);
     });
   }
 
-  goToNextProduct() {
-    const nextProductId = this.productId + 1;
-    this.router.navigate(['/details', nextProductId]);
+  async goToPreviousProduct() {
+    const previousProductId = +this.product.id - 1;
+    try {
+      const previousProduct = await this.productService.getProductById(previousProductId);
+      if (previousProduct) {
+        this.router.navigate(['/details', previousProductId]);
+      }
+    } catch (error) {
+      console.error('Failed to load previous product', error);
+    }
   }
 
-  goToPreviousProduct() {
-    const previousProductId = this.productId - 1;
-    this.router.navigate(['/details', previousProductId]);
+  async goToNextProduct() {
+    const nextProductId = +this.product.id + 1;
+    try {
+      const nextProduct = await this.productService.getProductById(nextProductId);
+      if (nextProduct) {
+        this.router.navigate(['/details', nextProductId]);
+      }
+    } catch (error) {
+      console.error('Failed to load next product', error);
+    }
   }
 }
