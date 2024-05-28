@@ -18,37 +18,33 @@ import { CommonModule } from '@angular/common';
   templateUrl: './edit-product-dialog.component.html',
   styleUrls: ['./edit-product-dialog.component.scss']
 })
-export class EditProductDialogComponent implements OnInit {
-  productForm!: FormGroup;
+export class EditProductDialogComponent{
+  editProductForm!: FormGroup;
   originalProductData!: Product;
   productCopy!: Product;
 
   constructor(
     private formBuilder: FormBuilder,
     private dialogRef: MatDialogRef<EditProductDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Product
-  ) { }
-
-  ngOnInit(): void {
-    this.originalProductData = { ...this.data }; // Guardar los datos originales en un objeto diferente
-    this.productCopy = { ...this.data }; // Crear una copia para el formulario
-    this.productForm = this.formBuilder.group({
-      title: [this.productCopy.title || '', Validators.required],
-      price: [this.productCopy.price || 0, [Validators.min(0), Validators.required]],
-      description: [this.productCopy.description || '', Validators.required],
-      category: [this.productCopy.category || '', Validators.required],
-      image: [this.productCopy.image || '', Validators.required]
+    @Inject(MAT_DIALOG_DATA) public data: { product: Product }
+  ) {
+    this.editProductForm = this.formBuilder.group({
+      id: [data.product.id, Validators.required],
+      title: [data.product.title, Validators.required],
+      price: [data.product.price, [Validators.required, Validators.min(0)]],
+      description: [data.product.description, Validators.required],
+      category: [data.product.category, Validators.required],
+      image: [data.product.image, Validators.required]
     });
   }
 
-  onSubmit(): void {
-    if (this.productForm.valid) {
-      this.dialogRef.close(this.productCopy);
+  save(): void {
+    if (this.editProductForm.valid) {
+      this.dialogRef.close(this.editProductForm.value);
     }
   }
 
   onCancel(): void {
-    this.productCopy = { ...this.originalProductData }; // Restaurar los datos originales en la copia
-    this.dialogRef.close(this.productCopy);
+    this.dialogRef.close(false);
   }
 }

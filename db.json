@@ -1,19 +1,19 @@
 {
   "products": [
     {
+      "id": "2",
       "title": "Fabric Sofa",
       "price": 399.99,
       "description": "Soft and comfortable fabric sofa, ideal for relaxing in the living room.",
-      "category": "Decore",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-b.jpg",
-      "id": "2"
+      "category": "Living room",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-b.jpg"
     },
     {
       "id": "3",
       "title": "Coffee Table",
       "price": 149.99,
       "description": "Sturdy and stylish coffee table, perfect for complementing your living room.",
-      "category": "Coffee Tables",
+      "category": "Living room",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
     },
     {
@@ -21,7 +21,7 @@
       "title": "Bed Frame",
       "price": 299.99,
       "description": "Durable and sleek bed frame, providing a comfortable sleep experience.",
-      "category": "Beds",
+      "category": "Office",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-c.jpg"
     },
     {
@@ -29,16 +29,16 @@
       "title": "Bookshelf",
       "price": 129.99,
       "description": "Functional and spacious bookshelf, great for organizing your books and decorations.",
-      "category": "Shelves",
+      "category": "Decore",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-09-a.jpg"
     },
     {
+      "id": "6",
       "title": "Desk",
       "price": 199.99,
       "description": "Versatile and practical desk, suitable for work or study.",
-      "category": "Desks",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-b.jpg",
-      "id": "6"
+      "category": "Office",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-b.jpg"
     },
     {
       "title": "TV Stand",
@@ -50,9 +50,9 @@
     },
     {
       "id": "11",
-      "title": "añlk",
-      "price": 200,
-      "description": "dsa",
+      "title": "Love seat",
+      "price": 200.99,
+      "description": "Comfortable couch",
       "category": "Office",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-a.jpg"
     },
@@ -60,9 +60,17 @@
       "id": "8",
       "title": "Ornament",
       "price": 299.79,
-      "description": "Made of ceramic",
+      "description": "Made of ceramic and steel",
       "category": "Decore",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-06-b.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Couch",
+      "price": 349.99,
+      "description": "Structure made of steel",
+      "category": "Office",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-13-b.jpg"
     }
   ],
   "categories": [

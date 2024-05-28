@@ -70,25 +70,22 @@ export class ControlPanelComponent {
     });
   }
 
-  async editProduct(productId: number) {
-    const productToEdit = this.productList.find(product => product.id === productId);
-    if (productToEdit) {
-      const dialogRef = this.dialog.open(EditProductDialogComponent, {
-        data: productToEdit // Pasamos los datos del producto a editar al diálogo de edición
-      });
+  openEditProductDialog(product: Product): void {
+    const dialogRef = this.dialog.open(EditProductDialogComponent, {
+      data: { product }
+    });
 
-      dialogRef.afterClosed().subscribe(async (result: Product) => {
-        if (result) {
-          const updatedProduct = await this.productService.updateProduct(productId, result);
-          const index = this.productList.findIndex(product => product.id === productId);
-          if (index !== -1) {
-            this.productList[index] = updatedProduct;
-            this.dataSource.data = this.productList;
-            this.showSnackBar('Product updated successfully');
-          }
+    dialogRef.afterClosed().subscribe(async (result: Product) => {
+      if (result) {
+        const updatedProduct = await this.productService.updateProduct(result);
+        const index = this.productList.findIndex(p => p.id === updatedProduct.id);
+        if (index !== -1) {
+          this.productList[index] = updatedProduct;
+          this.dataSource.data = this.productList;
+          this.showSnackBar('Product updated successfully');
         }
-      });
-    }
+      }
+    });
   }
 
   showSnackBar(message: string) {
