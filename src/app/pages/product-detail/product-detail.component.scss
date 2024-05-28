@@ -64,11 +64,11 @@ button.mat-button:hover {
   background-color: #3700b3;
 }
 button.custom-button {
-  font-size: 1.25em; /* Incrementar el tamaño de la fuente en 25% */
-  padding: 12px 24px; /* Aumentar el padding para agrandar los botones */
+  font-size: 1.25em; 
+  padding: 12px 24px; 
 }
 
-/* Responsividad */
+
 @media (max-width: 768px) {
   .product-detail-container {
     flex-direction: column;
