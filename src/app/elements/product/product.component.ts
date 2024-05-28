@@ -3,11 +3,11 @@ import { Product } from '../../interfaces/product';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatIconModule],
+  imports: [MatCardModule, MatButtonModule, MatIconModule, RouterLink, RouterLinkActive],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
