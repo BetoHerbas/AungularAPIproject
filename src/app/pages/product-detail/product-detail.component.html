@@ -1,1 +1,17 @@
- <p>product-detail works!</p><!-- aqui hay chamba -->
+<p>TRABAJANDO</p>
+<div class="product-detail-container">
+    <div class="product-image">
+      <img [src]="product.image" alt="{{ product.title }}">
+    </div>
+    <div class="product-info">
+      <h2>{{ product.title }}</h2>
+      <p><strong>Price:</strong> ${{ product.price }}</p>
+      <p><strong>Description:</strong> {{ product.description }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
+      <div class="navigation-buttons">
+        <button (click)="goToPreviousProduct()">Previous</button>
+        <button (click)="goToNextProduct()">Next</button>
+      </div>
+    </div>
+</div>
+  

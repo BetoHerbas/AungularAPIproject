@@ -20,6 +20,8 @@ import { CommonModule } from '@angular/common';
 })
 export class EditProductDialogComponent implements OnInit {
   productForm!: FormGroup;
+  originalProductData!: Product;
+  productCopy!: Product;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,22 +30,25 @@ export class EditProductDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.originalProductData = { ...this.data }; // Guardar los datos originales en un objeto diferente
+    this.productCopy = { ...this.data }; // Crear una copia para el formulario
     this.productForm = this.formBuilder.group({
-      title: [this.data.title || '', Validators.required],
-      price: [this.data.price || 0, [Validators.min(0), Validators.required]],
-      description: [this.data.description || '', Validators.required],
-      category: [this.data.category || '', Validators.required],
-      image: [this.data.image || '', Validators.required]
+      title: [this.productCopy.title || '', Validators.required],
+      price: [this.productCopy.price || 0, [Validators.min(0), Validators.required]],
+      description: [this.productCopy.description || '', Validators.required],
+      category: [this.productCopy.category || '', Validators.required],
+      image: [this.productCopy.image || '', Validators.required]
     });
   }
 
   onSubmit(): void {
     if (this.productForm.valid) {
-      this.dialogRef.close(this.productForm.value);
+      this.dialogRef.close(this.productCopy);
     }
   }
 
   onCancel(): void {
-    this.dialogRef.close();
+    this.productCopy = { ...this.originalProductData }; // Restaurar los datos originales en la copia
+    this.dialogRef.close(this.productCopy);
   }
 }

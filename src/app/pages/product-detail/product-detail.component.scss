@@ -1,0 +1,41 @@
+.product-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    .product-image, .product-info {
+      flex: 1 1 45%;
+      box-sizing: border-box;
+    }
+  
+    .product-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    .product-info {
+      padding: 1rem;
+    }
+  
+    .navigation-buttons {
+      margin-top: 1rem;
+  
+      button {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  
+  // Responsividad
+  @media (max-width: 768px) {
+    .product-detail-container {
+      flex-direction: column;
+  
+      .product-image, .product-info {
+        flex: 1 1 100%;
+      }
+    }
+  }
+  

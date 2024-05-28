@@ -5,8 +5,10 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 
 export const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: 'home', component: HomeComponent},
     {path: 'store', component: ShopComponent},
     {path: 'details/:id', component: ProductDetailComponent},
     {path: 'admin', component: ControlPanelComponent},
+    { path: '**', redirectTo: 'home' }
 ];
