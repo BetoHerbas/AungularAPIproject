@@ -19,11 +19,4 @@ export class CartComponent {
 
   dataSource = new MatTableDataSource<Cart>(this.productsCartList);
   displayedColumns: string[] = ['delete','image','title', 'price', 'quantity', 'subtotal'];
-
-  ngOnInit(): void {
-    this.cartService.getAllProducts().then((productsCartList: Cart[]) => {
-      this.productsCartList = productsCartList;
-      this.dataSource.data = productsCartList;
-    });
-  }
 }

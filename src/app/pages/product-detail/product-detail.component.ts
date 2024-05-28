@@ -1,13 +1,16 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product.service';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  styleUrls: ['./product-detail.component.scss'],
+  standalone: true,
+  imports: [MatGridListModule,MatButtonModule,MatCardModule],
 })
 export class ProductDetailComponent implements OnInit {
   product!: Product;
