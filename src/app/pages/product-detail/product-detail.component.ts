@@ -5,21 +5,26 @@ import {MatCardModule} from '@angular/material/card';
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product.service';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { CartService } from '../../services/cart.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
   standalone: true,
-  imports: [MatGridListModule,MatButtonModule,MatCardModule],
+  imports: [MatGridListModule,MatButtonModule,MatCardModule, FormsModule],
 })
 export class ProductDetailComponent implements OnInit {
   product!: Product;
   quantity: number = 1;
+  cartService: CartService = inject(CartService);
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -54,7 +59,22 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart() {
-
+    const cartItem = {
+      id: this.product.id,
+      product: this.product,
+      quantity: this.quantity
+    };
+    this.cartService.addProduct(cartItem)
+      .then(() => {
+        this.showSnackBar('Product added to cart successfully');
+      })
+      .catch(error => {
+        this.showSnackBar('Failed to add product to cart');
+      });
   }
-
+  showSnackBar(message: string) {
+    this._snackBar.open(message, 'Close', {
+      duration: 3000
+    });
+  }
 }

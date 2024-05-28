@@ -6,11 +6,12 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatIconModule, CurrencyPipe],
+  imports: [CommonModule, MatTableModule, MatIconModule, MatButtonModule, CurrencyPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })

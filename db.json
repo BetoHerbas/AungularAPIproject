@@ -92,6 +92,30 @@
       },
       "quantity": 1,
       "subtotal": 149.99
+    },
+    {
+      "id": "3",
+      "product": {
+        "id": "3",
+        "title": "Coffee Table",
+        "price": 149.99,
+        "description": "Sturdy and stylish coffee table, perfect for complementing your living room.",
+        "category": "Coffee Tables",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
+      },
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "product": {
+        "title": "TV Stand",
+        "price": 179.99,
+        "description": "Sleek and modern TV stand, perfect for holding your television and media devices.",
+        "category": "Living room",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg",
+        "id": "7"
+      },
+      "quantity": 2
     }
   ]
 }
