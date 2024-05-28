@@ -1,15 +1,18 @@
 .example-card {
     max-width: 250px; 
-    margin: auto; /* Centra la tarjeta horizontalmente */
+    margin: auto;
     margin-top: 100px;
-    text-align: center; /* Centra el texto dentro de la tarjeta */
-    padding: 10px; /* Añade un poco de espacio interior */
+    text-align: center; 
+    padding: 10px; 
+    overflow: hidden;
+    display: inline-block;
     
     img {
         margin: auto; 
         display: block; 
         max-width: 100%; 
         height: auto; 
+        transition: transform 0.5s ease; 
     }
 
     mat-card-header {
@@ -30,3 +33,6 @@
     }
 }
 
+.example-card:hover img {
+    transform: scale(1.1); 
+}

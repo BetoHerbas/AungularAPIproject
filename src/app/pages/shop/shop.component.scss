@@ -1,0 +1,31 @@
+.title{
+    margin: 50px;
+    font-weight: 200;
+}
+
+.title h4 {
+    font-size: 1rem;
+    color: #444141;
+    font-weight: 200;
+}
+
+.title h1 {
+    font-size: 3rem;
+    color: #000;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    transform: scaleY(1.5);
+    display: inline-block;
+}
+
+.shop{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.shop app-product {
+    color: white;
+}

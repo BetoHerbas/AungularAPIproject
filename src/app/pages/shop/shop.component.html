@@ -1,1 +1,16 @@
-<p>shop works!</p>
+<main>
+    <section class="title">
+        <h4>Home/Shop</h4>
+        <h1>Shop</h1>
+    </section>
+
+    <section class="shop">
+        @for (i of productList; track i.id) {
+        <app-product [product]="i"></app-product>
+        } @empty {
+        <p>No existen productos</p>
+        }
+    </section>
+
+    <app-footer></app-footer>
+</main>
