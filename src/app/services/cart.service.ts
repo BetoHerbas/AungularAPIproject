@@ -12,4 +12,8 @@ export class CartService {
     const data = await fetch(this.apiUrl);
     return (await data.json()) ?? [];
   }
+  async deleteFromCart(productId: number): Promise<void> {
+    const url = `${this.apiUrl}/${productId}`;
+    await fetch(url, { method: 'DELETE' });
+  }
 }
