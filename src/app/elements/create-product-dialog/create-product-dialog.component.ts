@@ -25,6 +25,7 @@ export class CreateProductDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
+      id: [0],
       title: ['', Validators.required],
       price: [0, [Validators.min(0), Validators.required]],
       description: ['', Validators.required],

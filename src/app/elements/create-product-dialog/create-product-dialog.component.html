@@ -2,6 +2,10 @@
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <mat-dialog-content>
         <mat-form-field floatLabel="always" class="example-full-width">
+            <mat-label>Id</mat-label>
+            <input matInput formControlName="id">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" class="example-full-width">
             <mat-label>Title</mat-label>
             <input matInput formControlName="title">
         </mat-form-field>
