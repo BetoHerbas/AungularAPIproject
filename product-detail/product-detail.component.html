@@ -1,0 +1,23 @@
+<mat-grid-list [cols]="isSmallScreen ? 1 : 2" rowHeight="1:1">
+  <mat-grid-tile class="productImage">
+    <img [src]="product.image" alt="{{ product.title }}">
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title><h2>{{ product.title }}</h2></mat-card-title>
+        <mat-card-subtitle>
+          <h3><strong>Category:</strong> {{ product.category }}</h3>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h4><strong>Description:</strong> {{ product.description }}</h4>
+        <h4><strong>Price:</strong> ${{ product.price }}</h4>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="goToPreviousProduct()" class="custom-button">Previous</button>
+        <button mat-button (click)="goToNextProduct()" class="custom-button">Next</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
