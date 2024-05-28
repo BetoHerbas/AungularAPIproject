@@ -47,7 +47,7 @@
 }
 
 .shop-by-category {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,13 +65,13 @@
     align-items: center;
 }
 
-.shop-by-header h6{
+.shop-by-header h6 {
     font-size: 1rem;
     color: #444141;
     font-weight: 200;
 }
 
-.shop-by-header h2{
+.shop-by-header h2 {
     font-size: 3rem;
     color: #000;
     font-weight: 800;
@@ -103,28 +103,79 @@
 }
 
 // estilos para el componente de producto
-.featured-items-container app-product{
+.featured-items-container app-product {
     color: white;
 }
 
-.comments{
-    height: 70vh;
+.comments {
+    margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
+    margin-bottom: 100px;
 }
 
-.why-choose-us{
+.comments-content {
+    display: flex;
+    
+}
+
+.comments-container {
+    background-color: #f1f3f2;
+    width: 25%;
+    height: 80%;
+    padding: 15px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.comments header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comments-container h3 {
+    font-size: 1vw;
+    color: #000;
+    font-weight: 400;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stars {
+    font-size: 2vw;
+    color: gold;
+    margin: 5px 0;
+}
+
+.testimony {
+    font-size: 1.3vw;
+    margin: 10px 0;
+}
+
+
+.why-choose-us {
     height: 50vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.why-choose-us header{
+.why-choose-us header {
     display: flex;
     flex-direction: column;
     align-items: center;

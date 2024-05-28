@@ -5,11 +5,12 @@ import { Categories } from '../../interfaces/categories';
 import { ProductService } from '../../services/product.service';
 import { CategoriesComponent } from '../../elements/categories/categories.component';
 import { CategoryService } from '../../services/category.service';
+import { FooterComponent } from '../../elements/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ ProductComponent, CategoriesComponent ],
+  imports: [ ProductComponent, CategoriesComponent, FooterComponent ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
