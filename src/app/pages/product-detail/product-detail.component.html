@@ -13,6 +13,14 @@
       <mat-card-content>
         <h4><strong>Description:</strong> {{ product.description }}</h4>
         <h4><strong>Price:</strong> ${{ product.price }}</h4>
+        
+        <button mat-raised-button color="primary" (click)="addToCart()">Add to Cart</button>
+        
+        <div class="quantity-container">
+          <div class="input-group quantity-selector quantity-selector-sm">
+            <input type="number" id="inputQuantitySelectorSm" class="form-control" aria-live="polite" data-bs-step="counter" name="quantity" title="quantity" value="0" min="0" max="10" step="1" data-bs-round="0" aria-label="Quantity selector">
+            </div>
+        </div>
       </mat-card-content>
       <mat-card-actions>
         <button mat-button (click)="goToPreviousProduct()"class="custom-button">Previous</button>
@@ -21,24 +29,3 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
-
-
-<!-- <mat-grid-list cols="2" rowHeight="1:1">
-  <mat-grid-tile><img [src]="product.image" alt="{{ product.title }}"></mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>{{ product.title }}</mat-card-title>
-        <mat-card-subtitle><p><strong>Category:</strong> {{ product.category }}</p></mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p><strong>Description:</strong> {{ product.description }}</p>
-        <p><strong>Price:</strong> ${{ product.price }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="goToPreviousProduct()">Previous</button>
-        <button mat-button (click)="goToNextProduct()">Next</button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list> -->

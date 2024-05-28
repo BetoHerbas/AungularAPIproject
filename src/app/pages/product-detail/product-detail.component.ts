@@ -14,6 +14,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 })
 export class ProductDetailComponent implements OnInit {
   product!: Product;
+  quantity: number = 1;
 
   constructor(
     private route: ActivatedRoute,
@@ -51,4 +52,9 @@ export class ProductDetailComponent implements OnInit {
       console.error('Failed to load next product', error);
     }
   }
+
+  addToCart() {
+
+  }
+
 }
