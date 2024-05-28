@@ -68,6 +68,21 @@ button.custom-button {
   padding: 12px 24px; 
 }
 
+.quantity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 25vw;
+}
+
+.buttons{
+  margin-top: 10vw;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
 
 @media (max-width: 768px) {
   .product-detail-container {
