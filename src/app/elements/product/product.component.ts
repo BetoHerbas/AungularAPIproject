@@ -14,8 +14,11 @@ import {MatIconModule} from '@angular/material/icon';
 export class ProductComponent {
   @Input() product!: Product;
   @Output() delete = new EventEmitter<number>();
-
+  @Output() edit = new EventEmitter<number>();
   deleteProduct() {
     this.delete.emit(this.product.id);
+  }
+  editProduct() {
+    this.edit.emit(this.product.id);
   }
 }

@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Editar Producto</h1>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+        <mat-form-field floatLabel="always" class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field floatLabel="always">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price" type="number" class="example-right-align" placeholder="0">
+            <span matTextPrefix>$&nbsp;</span>
+            <span matTextSuffix>.00</span>
+        </mat-form-field>
+        <mat-form-field floatLabel="always" class="example-full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field floatLabel="always">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option value="Bedroom">Bedroom</mat-option>
+                <mat-option value="Decore">Decore</mat-option>
+                <mat-option value="Living room">Living room</mat-option>
+                <mat-option value="Office">Office</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field floatLabel="always" class="example-full-width">
+            <mat-label>Image</mat-label>
+            <input matInput formControlName="image">
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancelar</button>
+        <button mat-button color="primary" type="submit" [disabled]="productForm.invalid">Confirmar</button>
+    </mat-dialog-actions>
+</form>

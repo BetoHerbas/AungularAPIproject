@@ -1,12 +1,12 @@
 {
   "products": [
     {
-      "id": "2",
       "title": "Fabric Sofa",
       "price": 399.99,
       "description": "Soft and comfortable fabric sofa, ideal for relaxing in the living room.",
-      "category": "Sofas",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-b.jpg"
+      "category": "Decore",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-14-b.jpg",
+      "id": "2"
     },
     {
       "id": "3",
@@ -47,6 +47,14 @@
       "description": "Sleek and modern TV stand, perfect for holding your television and media devices.",
       "category": "Entertainment Centers",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg"
+    },
+    {
+      "title": "Cama",
+      "price": 500,
+      "description": "manzana",
+      "category": "Bedroom",
+      "image": "none",
+      "id": "f43a"
     }
   ],
   "categories": [

@@ -3,24 +3,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-
 import { MatDialog } from '@angular/material/dialog';
+
 import { ConfirmDialogComponent } from '../../elements/confirm-dialog/confirm-dialog.component';
+import { CreateProductDialogComponent } from '../../elements/create-product-dialog/create-product-dialog.component';
+import { EditProductDialogComponent } from '../../elements/edit-product-dialog/edit-product-dialog.component'; // Importa el componente de edición
 
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product.service';
+
 import { CommonModule } from '@angular/common';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CreateProductDialogComponent } from '../../elements/create-product-dialog/create-product-dialog.component';
-
 
 @Component({
   selector: 'app-control-panel',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatIconModule, MatTableModule],
   templateUrl: './control-panel.component.html',
-  styleUrl: './control-panel.component.scss'
+  styleUrls: ['./control-panel.component.scss']
 })
 export class ControlPanelComponent {
   productList: Product[] = [];
@@ -29,15 +29,13 @@ export class ControlPanelComponent {
   dataSource = new MatTableDataSource<Product>(this.productList);
   displayedColumns: string[] = ['id', 'title', 'price', 'description', 'category', 'image', 'edit', 'delete'];
 
-  constructor(private dialog: MatDialog, private _snackBar: MatSnackBar) {
-  }
+  constructor(private dialog: MatDialog, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.productService.getAllProducts().then((productList: Product[]) => {
-      this.productList = productList
-      this.dataSource.data = productList
+      this.productList = productList;
+      this.dataSource.data = productList;
     });
-
   }
 
   hide = true;
@@ -46,12 +44,12 @@ export class ControlPanelComponent {
     event.stopPropagation();
   }
 
-  openCreateProductDialog(): void{
+  openCreateProductDialog(): void {
     const dialogRef = this.dialog.open(CreateProductDialogComponent);
     dialogRef.afterClosed().subscribe(async (result: Product) => {
       if (result) {
-        const createdProduct = await this.productService.createProduct(result);
-        this.productList.push(createdProduct);
+        const newProduct = await this.productService.createProduct(result);
+        this.productList.push(newProduct);
         this.dataSource.data = this.productList;
         this.showSnackBar('Product added successfully');
       }
@@ -71,12 +69,30 @@ export class ControlPanelComponent {
     });
   }
 
-  showSnackBar(mensaje: string) {
-    this._snackBar.open(mensaje, 'Close', {
+  async editProduct(productId: number) {
+    const productToEdit = this.productList.find(product => product.id === productId);
+    if (productToEdit) {
+      const dialogRef = this.dialog.open(EditProductDialogComponent, {
+        data: productToEdit // Pasamos los datos del producto a editar al diálogo de edición
+      });
+
+      dialogRef.afterClosed().subscribe(async (result: Product) => {
+        if (result) {
+          const updatedProduct = await this.productService.updateProduct(productId, result);
+          const index = this.productList.findIndex(product => product.id === productId);
+          if (index !== -1) {
+            this.productList[index] = updatedProduct;
+            this.dataSource.data = this.productList;
+            this.showSnackBar('Product updated successfully');
+          }
+        }
+      });
+    }
+  }
+
+  showSnackBar(message: string) {
+    this._snackBar.open(message, 'Close', {
       duration: 3000
     });
   }
-
-
-  
 }
