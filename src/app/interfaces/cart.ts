@@ -4,5 +4,4 @@ export interface Cart {
     id: number;
     product: Product;
     quantity: number;
-    subtotal: number;
 }

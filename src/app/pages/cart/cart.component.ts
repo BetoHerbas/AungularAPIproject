@@ -37,7 +37,7 @@ export class CartComponent {
   getTotal(): number {
     let total = 0;
     this.productsCartList.forEach((cartItem: Cart) => {
-      total += cartItem.subtotal;
+      total += cartItem.quantity * cartItem.product.price;
     });
     return total;
   }

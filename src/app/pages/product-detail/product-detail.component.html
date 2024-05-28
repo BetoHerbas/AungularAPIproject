@@ -1,16 +1,44 @@
-<div class="product-detail-container">
-    <div class="product-image">
-      <img [src]="product.image" alt="{{ product.title }}">
-    </div>
-    <div class="product-info">
-      <h2>{{ product.title }}</h2>
-      <p><strong>Price:</strong> ${{ product.price }}</p>
-      <p><strong>Description:</strong> {{ product.description }}</p>
-      <p><strong>Category:</strong> {{ product.category }}</p>
-      <div class="navigation-buttons">
-        <button (click)="goToPreviousProduct()">Previous</button>
-        <button (click)="goToNextProduct()">Next</button>
-      </div>
-    </div>
-</div>
-  
+<mat-grid-list cols="2" rowHeight="1:1" class="product-detail-container">
+  <mat-grid-tile class="product-image">
+    <img [src]="product.image" alt="{{ product.title }}" class="image">
+  </mat-grid-tile>
+  <mat-grid-tile class="product-info">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title><h2>{{ product.title }}</h2></mat-card-title>
+        <mat-card-subtitle>
+          <h3><strong>Category:</strong> {{ product.category }}</h3>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h4><strong>Description:</strong> {{ product.description }}</h4>
+        <h4><strong>Price:</strong> ${{ product.price }}</h4>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="goToPreviousProduct()"class="custom-button">Previous</button>
+        <button mat-button (click)="goToNextProduct()"class="custom-button">Next</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<!-- <mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile><img [src]="product.image" alt="{{ product.title }}"></mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-subtitle><p><strong>Category:</strong> {{ product.category }}</p></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Description:</strong> {{ product.description }}</p>
+        <p><strong>Price:</strong> ${{ product.price }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="goToPreviousProduct()">Previous</button>
+        <button mat-button (click)="goToNextProduct()">Next</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list> -->
