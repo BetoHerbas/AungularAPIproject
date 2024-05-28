@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -10,5 +11,6 @@ export const routes: Routes = [
     {path: 'store', component: ShopComponent},
     {path: 'details/:id', component: ProductDetailComponent},
     {path: 'admin', component: ControlPanelComponent},
+    {path: 'cart', component: CartComponent},
     { path: '**', redirectTo: 'home' }
 ];
