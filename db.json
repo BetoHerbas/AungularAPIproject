@@ -47,6 +47,14 @@
       "category": "Living room",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-11-b.jpg",
       "id": "7"
+    },
+    {
+      "id": "80c4",
+      "title": "Lamp",
+      "price": 200,
+      "description": "Made of ceramic",
+      "category": "Living room",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-a.jpg"
     }
   ],
   "categories": [
@@ -73,6 +81,7 @@
   ],
   "cart": [
     {
+      "id": "1",
       "product": {
         "id": "3",
         "title": "Coffee Table",
@@ -82,18 +91,6 @@
         "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
       },
       "quantity": 1,
-      "subtotal": 149.99
-    },
-    {
-      "product": {
-        "id": "3",
-        "title": "Coffee Table",
-        "price": 149.99,
-        "description": "Sturdy and stylish coffee table, perfect for complementing your living room.",
-        "category": "Coffee Tables",
-        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
-      },
-      "quantity": 2,
       "subtotal": 149.99
     }
   ]
