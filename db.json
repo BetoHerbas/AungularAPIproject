@@ -79,6 +79,7 @@
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/cat-2-400x400.jpg"
     }
   ],
+<<<<<<< HEAD
   "cart": [
     {
       "id": "1",
@@ -118,4 +119,7 @@
       "quantity": 2
     }
   ]
+=======
+  "cart": []
+>>>>>>> aa3a852387f8029a64f9158090f7135d5dc999de
 }

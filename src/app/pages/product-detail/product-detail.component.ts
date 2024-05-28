@@ -1,10 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, Renderer2, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product.service';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FooterComponent } from '../../elements/footer/footer.component';
 import { CartService } from '../../services/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
   standalone: true,
-  imports: [MatGridListModule,MatButtonModule,MatCardModule, FormsModule],
+  imports: [MatGridListModule,MatButtonModule,MatCardModule, FooterComponent, FormsModule],
 })
 export class ProductDetailComponent implements OnInit {
   product!: Product;
@@ -21,6 +22,7 @@ export class ProductDetailComponent implements OnInit {
   cartService: CartService = inject(CartService);
 
   constructor(
+    private renderer: Renderer2,
     private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService,
@@ -28,6 +30,7 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.renderer.setProperty(document.documentElement, 'scrollTop', 0);
     this.route.paramMap.subscribe(async params => {
       const productId = +params.get('id')!;
       this.product = await this.productService.getProductById(productId);

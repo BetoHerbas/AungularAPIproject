@@ -14,11 +14,12 @@ import { ProductService } from '../../services/product.service';
 
 import { CommonModule } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FooterComponent } from '../../elements/footer/footer.component';
 
 @Component({
   selector: 'app-control-panel',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatTableModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatTableModule, FooterComponent],
   templateUrl: './control-panel.component.html',
   styleUrls: ['./control-panel.component.scss']
 })
