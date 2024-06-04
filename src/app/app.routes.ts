@@ -4,6 +4,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,5 +13,5 @@ export const routes: Routes = [
     {path: 'details/:id', component: ProductDetailComponent},
     {path: 'admin', component: ControlPanelComponent},
     {path: 'cart', component: CartComponent},
-    { path: '**', redirectTo: 'home' }
+    { path: '**', component: NotFoundComponent}
 ];
