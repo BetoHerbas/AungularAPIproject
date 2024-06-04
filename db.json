@@ -49,20 +49,12 @@
       "id": "7"
     },
     {
-      "id": "11",
-      "title": "añlk",
+      "id": "80c4",
+      "title": "Lamp",
       "price": 200,
-      "description": "dsa",
-      "category": "Office",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-a.jpg"
-    },
-    {
-      "id": "8",
-      "title": "Ornament",
-      "price": 299.79,
       "description": "Made of ceramic",
-      "category": "Decore",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-06-b.jpg"
+      "category": "Living room",
+      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-a.jpg"
     }
   ],
   "categories": [
@@ -89,7 +81,7 @@
   ],
   "cart": [
     {
-      "id": "1",
+      "id": "3",
       "product": {
         "id": "3",
         "title": "Coffee Table",
@@ -98,8 +90,7 @@
         "category": "Coffee Tables",
         "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
       },
-      "quantity": 1,
-      "subtotal": 149.99
+      "quantity": 3
     },
     {
       "id": "6",
@@ -110,18 +101,6 @@
         "category": "Desks",
         "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-b.jpg",
         "id": "6"
-      },
-      "quantity": 2
-    },
-    {
-      "id": "4",
-      "product": {
-        "id": "4",
-        "title": "Bed Frame",
-        "price": 299.99,
-        "description": "Durable and sleek bed frame, providing a comfortable sleep experience.",
-        "category": "Beds",
-        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-01-c.jpg"
       },
       "quantity": 3
     }
