@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -16,10 +16,13 @@ import { CommonModule } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FooterComponent } from '../../elements/footer/footer.component';
 
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+
 @Component({
   selector: 'app-control-panel',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatTableModule, FooterComponent],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatTableModule, FooterComponent, MatSort, MatPaginator],
   templateUrl: './control-panel.component.html',
   styleUrls: ['./control-panel.component.scss']
 })
@@ -30,12 +33,17 @@ export class ControlPanelComponent {
   dataSource = new MatTableDataSource<Product>(this.productList);
   displayedColumns: string[] = ['id', 'title', 'price', 'description', 'category', 'image', 'edit', 'delete'];
 
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   constructor(private dialog: MatDialog, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.productService.getAllProducts().then((productList: Product[]) => {
       this.productList = productList;
       this.dataSource.data = productList;
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
     });
   }
 

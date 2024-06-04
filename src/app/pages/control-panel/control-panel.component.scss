@@ -17,3 +17,40 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, input, button, label, select, option, t
 main{
   padding: 5%;
 }
+.mat-table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  min-width: 100px;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  th, td {
+    padding: 8px 12px;
+  }
+
+  .mat-header-row, .mat-row {
+    display: block;
+  }
+
+  .mat-cell, .mat-header-cell {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+
+  .mat-header-cell {
+    font-weight: bold;
+  }
+
+  .mat-cell img {
+    max-width: 100%;
+    height: auto;
+  }
+}
