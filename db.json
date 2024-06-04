@@ -99,18 +99,6 @@
         "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
       },
       "quantity": 3
-    },
-    {
-      "id": "6",
-      "product": {
-        "title": "Desk",
-        "price": 199.99,
-        "description": "Versatile and practical desk, suitable for work or study.",
-        "category": "Desks",
-        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-b.jpg",
-        "id": "6"
-      },
-      "quantity": 3
     }
   ]
 }
