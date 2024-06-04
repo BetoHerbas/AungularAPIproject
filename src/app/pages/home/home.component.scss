@@ -119,7 +119,6 @@
 
 .comments-content {
     display: flex;
-    
 }
 
 .comments-container {
@@ -179,4 +178,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .comments-content{
+        flex-direction: column;
+    }
+    .comments-container{
+        width: 80%;
+    }
+    .stars{
+        font-size: 4vw;
+    }
+    .testimony{
+        font-size: 3vw;
+    }
+    .comments h3{
+        font-size: 3vw;
+    }
 }
