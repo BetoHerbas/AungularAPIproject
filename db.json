@@ -49,14 +49,6 @@
       "id": "7"
     },
     {
-      "id": "11",
-      "title": "Love seat",
-      "price": 200.99,
-      "description": "Comfortable couch",
-      "category": "Office",
-      "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-15-a.jpg"
-    },
-    {
       "id": "8",
       "title": "Ornament",
       "price": 299.79,
@@ -69,7 +61,7 @@
       "title": "Couch",
       "price": 349.99,
       "description": "Structure made of steel",
-      "category": "Office",
+      "category": "Living room",
       "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-13-b.jpg"
     }
   ],
