@@ -34,8 +34,8 @@ export class ProductService {
     }
   }
 
-  async updateProduct(productId: number, product: Product): Promise<Product> {
-    const response = await fetch(`${this.apiUrl}/${productId}`, {
+  async updateProduct(product: Product): Promise<Product> {
+    const response = await fetch(`${this.apiUrl}/${product.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
