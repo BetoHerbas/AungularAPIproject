@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "2",
-      "title": "Fabric Sofa",
+      "title": "Fabric ",
       "price": 399.99,
       "description": "Soft and comfortable fabric sofa, ideal for relaxing in the living room.",
       "category": "Living room",
@@ -89,16 +89,16 @@
   ],
   "cart": [
     {
-      "id": "3",
+      "id": "5",
       "product": {
-        "id": "3",
-        "title": "Coffee Table",
-        "price": 149.99,
-        "description": "Sturdy and stylish coffee table, perfect for complementing your living room.",
-        "category": "Coffee Tables",
-        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-12-a.jpg"
+        "id": "5",
+        "title": "Bookshelf",
+        "price": 129.99,
+        "description": "Functional and spacious bookshelf, great for organizing your books and decorations.",
+        "category": "Decore",
+        "image": "https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/product-09-a.jpg"
       },
-      "quantity": 3
+      "quantity": 45
     }
   ]
 }
