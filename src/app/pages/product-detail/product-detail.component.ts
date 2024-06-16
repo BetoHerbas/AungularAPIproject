@@ -20,6 +20,7 @@ export class ProductDetailComponent implements OnInit {
   product!: Product;
   quantity: number = 1;
   cartService: CartService = inject(CartService);
+  userId!: number;
 
   constructor(
     private renderer: Renderer2,
@@ -27,7 +28,10 @@ export class ProductDetailComponent implements OnInit {
     private router: Router,
     private productService: ProductService,
     private _snackBar: MatSnackBar
-  ) {}
+  ) {
+    // this.userId = this.authService.getUserId();
+    this.userId = 1;
+  }
 
   ngOnInit() {
     this.renderer.setProperty(document.documentElement, 'scrollTop', 0);
@@ -63,11 +67,12 @@ export class ProductDetailComponent implements OnInit {
 
   addToCart() {
     const cartItem = {
-      id: this.product.id,
-      product: this.product,
+      id: 0,
+      userId: this.userId,
+      productId: this.product.id,
       quantity: this.quantity
     };
-    this.cartService.addProduct(cartItem)
+    this.cartService.addProductToCart(cartItem)
       .then(() => {
         this.showSnackBar('Product added to cart successfully');
       })
@@ -75,6 +80,7 @@ export class ProductDetailComponent implements OnInit {
         this.showSnackBar('Failed to add product to cart');
       });
   }
+
   showSnackBar(message: string) {
     this._snackBar.open(message, 'Close', {
       duration: 3000

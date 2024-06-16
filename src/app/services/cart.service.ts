@@ -1,32 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Cart } from '../interfaces/cart';
+import { BuyCartItem } from '../interfaces/buyCartItem';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  apiUrl = 'http://localhost:3000/cart';
+  apiUrl = 'http://localhost:3000/buycart';
 
   constructor() { }
-  async getAllProducts(): Promise<Cart[]> {
-    const data = await fetch(this.apiUrl);
+  async getBuyCartByUserId(userId: number): Promise<BuyCartItem[]> {
+    const data = await fetch(`${this.apiUrl}/${userId}`);
     return (await data.json()) ?? [];
   }
-  async addProduct(product: Cart): Promise<void> {
+
+  async addProductToCart(cartItem: BuyCartItem): Promise<void> {
     const response = await fetch(this.apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(product)
+      body: JSON.stringify(cartItem)
     });
 
     if (!response.ok) {
       throw new Error('Failed to add product to cart');
     }
   }
-  async deleteFromCart(productId: number): Promise<void> {
-    const url = `${this.apiUrl}/${productId}`;
+
+  async deleteFromCart(cartId: number): Promise<void> {
+    const url = `${this.apiUrl}/${cartId}`;
     await fetch(url, { method: 'DELETE' });
   }
 }
