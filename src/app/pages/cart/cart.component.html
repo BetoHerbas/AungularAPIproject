@@ -6,7 +6,7 @@
             <ng-container matColumnDef="delete">
                 <th mat-header-cell *matHeaderCellDef>  </th>
                 <td mat-cell *matCellDef="let cartItem">
-                    <button mat-icon-button color="warn" (click)="removeFromCart(cartItem.id)" >
+                    <button mat-icon-button color="warn" (click)="removeFromCart(cartItem)" >
                         <mat-icon>remove</mat-icon>
                     </button>
                 </td>

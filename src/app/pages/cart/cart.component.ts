@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Cart } from '../../interfaces/cart';
+import { BuyCartItem } from '../../interfaces/buyCartItem';
 import { CartService } from '../../services/cart.service';
 
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -16,10 +16,12 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent {
-  productsCartList: Cart[] = [];
+  productsCartList: BuyCartItem[] = [];
   cartService: CartService = inject(CartService);
+  
+  userId = 1;
 
-  dataSource = new MatTableDataSource<Cart>(this.productsCartList);
+  dataSource = new MatTableDataSource<BuyCartItem>(this.productsCartList);
   displayedColumns: string[] = ['delete', 'image', 'title', 'price', 'quantity', 'subtotal'];
   total = 0;
   totalDataSource = new MatTableDataSource<any>;
@@ -27,33 +29,40 @@ export class CartComponent {
   constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.cartService.getAllProducts().then((productsCartList: Cart[]) => {
+    this.cartService.getBuyCartByUserId(this.userId).then((productsCartList: any[]) => {
       this.productsCartList = productsCartList;
       this.dataSource.data = productsCartList;
       this.calculateTotal();
     });
-
   }
 
   getTotal(): number {
     let total = 0;
-    this.productsCartList.forEach((cartItem: Cart) => {
-      total += cartItem.quantity * cartItem.product.price;
+    this.productsCartList.forEach((cartItem: any) => {
+      const productPrice = cartItem.product.price;
+      total += cartItem.quantity * productPrice;
     });
     return total;
   }
+  
   calculateTotal() {
     this.total = this.getTotal();
     this.totalDataSource = new MatTableDataSource([{ total: this.total }]);
   }
 
-  async removeFromCart(productId: number) {
-    const result = await this.cartService.deleteFromCart(productId);
-      this.productsCartList = this.productsCartList.filter(product => product.id !== productId);
+  async removeFromCart(cartItem: BuyCartItem) {
+    try {
+      await this.cartService.deleteFromCart(cartItem.id);
+      this.productsCartList = this.productsCartList.filter(item => item.id !== cartItem.id);
       this.dataSource.data = this.productsCartList;
       this.calculateTotal();
       this.showSnackBar('Removed from cart successfully');
+    } catch (error) {
+      console.error('Failed to remove product from cart', error);
+      this.showSnackBar('Failed to remove product from cart');
+    }
   }
+
   showSnackBar(message: string) {
     this._snackBar.open(message, 'Close', {
       duration: 3000
