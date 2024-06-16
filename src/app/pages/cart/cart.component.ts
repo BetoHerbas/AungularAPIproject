@@ -29,18 +29,18 @@ export class CartComponent {
   constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.cartService.getBuyCartByUserId(this.userId).then((productsCartList: BuyCartItem[]) => {
+    this.cartService.getBuyCartByUserId(this.userId).then((productsCartList: any[]) => {
       this.productsCartList = productsCartList;
       this.dataSource.data = productsCartList;
       this.calculateTotal();
     });
-
   }
 
   getTotal(): number {
     let total = 0;
-    this.productsCartList.forEach((cartItem: BuyCartItem) => {
-      total += cartItem.quantity ;//////
+    this.productsCartList.forEach((cartItem: any) => {
+      const productPrice = cartItem.product.price;
+      total += cartItem.quantity * productPrice;
     });
     return total;
   }
