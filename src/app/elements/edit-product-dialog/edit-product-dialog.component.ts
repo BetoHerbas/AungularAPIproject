@@ -29,7 +29,7 @@ export class EditProductDialogComponent{
     @Inject(MAT_DIALOG_DATA) public data: { product: Product }
   ) {
     this.editProductForm = this.formBuilder.group({
-      id: [data.product.id, Validators.required],
+      id: [data.product.id],
       title: [data.product.title, Validators.required],
       price: [data.product.price, [Validators.required, Validators.min(0)]],
       description: [data.product.description, Validators.required],
