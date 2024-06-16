@@ -6,9 +6,11 @@ import { ControlPanelComponent } from './pages/control-panel/control-panel.compo
 import { CartComponent } from './pages/cart/cart.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BuyCategoryComponent } from './pages/buy-category/buy-category.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
     {path: 'store', component: ShopComponent},
     {path: 'details/:id', component: ProductDetailComponent},
