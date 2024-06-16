@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product';
 
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,18 +15,7 @@ export class ProductService {
     console.log(data);
     return (await data.json()) ?? [];
   }
-  // getAllProducts(): Observable<Product[]> {
-  //   return this.http.get<Product[]>(this.apiUrl);
-  // }
-
-  // async getAllProducts(): Promise<Product[]> {
-  //   const response = await fetch(this.apiUrl);
-  //   if (!response.ok) {
-  //     throw new Error('Failed to fetch products');
-  //   }
-  //   return response.json();
-  // }
-
+  
   async createProduct(product: Product): Promise<Product> {
     const response = await fetch(this.apiUrl, {
       method: 'POST',

@@ -8,18 +8,26 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
   username: string = '';
   password: string = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   onLogin(): void {
-    if (!this.authService.login(this.username, this.password)) {
-      alert('Invalid username or password');
-    }
+    this.authService.login(this.username, this.password)
+      .then(response => {
+        if (response.success) {
+          this.router.navigate(['/home']);
+        } else {
+          alert('Invalid username or password');
+        }
+      })
+      .catch(err => {
+        console.error('Login error:', err);
+        alert('An error occurred. Please try again.');
+      });
   }
-
 }

@@ -1,31 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuthenticated = false;
+  private apiUrl = 'http://localhost:3000';
 
-  constructor(private router: Router) { }
+  constructor() {}
 
-  login(username: string, password: string): boolean {
-    
-    if (username === 'user' && password === 'password') {
-      this.isAuthenticated = true;
-      this.router.navigate(['/home']);
-      return true;
+  async login(username: string, password: string): Promise<any> {
+    try {
+      const response = await fetch(`${this.apiUrl}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
     }
-    this.isAuthenticated = false;
-    return false;
   }
 
-  logout(): void {
-    this.isAuthenticated = false;
-    this.router.navigate(['/login']);
-  }
-
-  isLoggedIn(): boolean {
-    return this.isAuthenticated;
-  }
+  // Otros métodos de autenticación, logout, etc.
 }
