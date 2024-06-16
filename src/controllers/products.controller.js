@@ -28,3 +28,32 @@ export const createProduct = async (req, res) => {
       res.status(500).send('Server error');
     }
   };
+
+  export const deleteProduct = async (req, res) => {
+    const { id } = req.params;
+    try {
+      await pool.query('DELETE FROM products WHERE id = ?', [id]);
+      res.status(204).send(); // No Content
+    } catch (error) {
+      console.error('Error deleting product:', error);
+      res.status(500).send('Server error');
+    }
+  };
+
+  export const updateProduct = async (req, res) => {
+    const { id } = req.params;
+    const { title, price, description, category, image } = req.body;
+
+    try {
+        const [result] = await pool.query('UPDATE products SET title = ?, price = ?, description = ?, category = ?, image = ? WHERE id = ?', [title, price, description, category, image, id]);
+        
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: "Product not found" });
+        }
+
+        const [updatedProduct] = await pool.query('SELECT * FROM products WHERE id = ?', [id]);
+        res.json(updatedProduct[0]);
+    } catch (error) {
+        res.status(500).json({ message: "Failed to update product" });
+    }
+};
