@@ -27,5 +27,25 @@ export class AuthService {
     }
   }
 
-  // Otros métodos de autenticación, logout, etc.
+  async signUp(user: { name: string; password: string }): Promise<any> {
+    try {
+      const response = await fetch(`${this.apiUrl}/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to sign up');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error during sign up', error);
+      throw error;
+    }
+  }
+
 }

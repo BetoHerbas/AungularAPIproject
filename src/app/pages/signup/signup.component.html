@@ -1,1 +1,13 @@
-<p>signup works!</p>
+<div class="login-container">
+
+    <div class="container">
+        <div class="heading">Sign Up</div>
+        <form  class="form" (ngSubmit)="onSignUp()">
+            <input type="text" id="username" [(ngModel)]="user.name" name="username" required required="" class="input"
+                placeholder="E-mail">
+            <input id="password" [(ngModel)]="user.password" required="" class="input" type="password" name="password"
+                placeholder="Password">
+            <input class="login-button" type="submit" value="Sign Up">
+
+        </form>
+    </div>
