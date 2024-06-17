@@ -13,7 +13,8 @@ import { RouterLink, RouterLinkActive, RouterOutlet, Router } from '@angular/rou
 export class SignupComponent {
   user = {
     name: '',
-    password: ''
+    password: '',
+    admin: 0
   };
   
   constructor(private authService: AuthService, private router: Router) {}

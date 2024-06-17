@@ -27,7 +27,7 @@ export class AuthService {
     }
   }
 
-  async signUp(user: { name: string; password: string }): Promise<any> {
+  async signUp(user: { name: string; password: string; admin: number }): Promise<any> {
     try {
       const response = await fetch(`${this.apiUrl}/signup`, {
         method: 'POST',

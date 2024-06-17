@@ -38,9 +38,9 @@ export const getUsers = async (req, res) => {
 };
 
 export const signUp = async (req, res) => {
-    const { name, password } = req.body;
+    const { name, password, admin } = req.body;
     try {
-      const [result] = await pool.query('INSERT INTO users (name, password) VALUES (?, ?)', [name, password]);
+      const [result] = await pool.query('INSERT INTO users (name, password, admin) VALUES (?, ?, ?)', [name, password, admin]);
       res.status(201).json({ id: result.insertId, name });
     } catch (error) {
       console.error(error);

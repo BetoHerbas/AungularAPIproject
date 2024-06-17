@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -10,11 +10,12 @@ import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAdminDialogComponent } from './elements/create-admin-dialog/create-admin-dialog.component';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatIconModule, MatSidenavModule, MatToolbarModule, MatListModule, CommonModule,MatButtonModule, MatMenuModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatIconModule, MatSidenavModule, MatToolbarModule, MatListModule, CommonModule, MatButtonModule, MatMenuModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -23,7 +24,7 @@ export class AppComponent {
   showHeader: boolean = true;
   isAdmin: number = 0;
 
-  constructor(private router: Router, private dialog: MatDialog) {
+  constructor(private router: Router, private dialog: MatDialog, private authService: AuthService) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const hideHeaderRoutes = ['/login', '/signup'];
@@ -32,7 +33,17 @@ export class AppComponent {
       this.isAdmin = Number(localStorage.getItem('admin'));
     });
   }
-  onAddAdmin(){
+  onAddAdmin() {
     const dialogRef = this.dialog.open(CreateAdminDialogComponent);
-  }
+    dialogRef.afterClosed().subscribe(async (newAdmin: any) => {
+      if (newAdmin) {
+        try {
+          const response = await this.authService.signUp(newAdmin);
+          console.log('User registered successfully', response);
+        } catch (error) {
+          console.error('Error registering user', error);
+        }
+      }
+    });
+}
 }

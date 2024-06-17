@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './create-admin-dialog.component.scss'
 })
 export class CreateAdminDialogComponent {
-  productForm!: FormGroup;
+  newAdminForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,19 +24,17 @@ export class CreateAdminDialogComponent {
   ) { }
 
   ngOnInit(): void {
-    this.productForm = this.formBuilder.group({
+    this.newAdminForm = this.formBuilder.group({
       id: [0],
-      title: ['', Validators.required],
-      price: [0, [Validators.min(0), Validators.required]],
-      description: ['', Validators.required],
-      category: ['', Validators.required],
-      image: ['', Validators.required]
+      name: ['', Validators.required],
+      password: ['', Validators.required],
+      admin: [1]
     });
   }
 
   onSubmit(): void {
-    if (this.productForm.valid) {
-      this.dialogRef.close(this.productForm.value);
+    if (this.newAdminForm.valid) {
+      this.dialogRef.close(this.newAdminForm.value);
     }
   }
    
