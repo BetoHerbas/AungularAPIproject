@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Añadir Producto</h1>
+<h1 mat-dialog-title>Create product</h1>
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <mat-dialog-content>
         <mat-form-field floatLabel="always" class="example-full-width">
@@ -30,7 +30,7 @@
         </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-button (click)="onCancel()">Cancelar</button>
-        <button mat-button color="primary" type="submit" [disabled]="productForm.invalid">Añadir</button>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-button color="primary" type="submit" [disabled]="productForm.invalid">Add</button>
       </mat-dialog-actions>
 </form>
