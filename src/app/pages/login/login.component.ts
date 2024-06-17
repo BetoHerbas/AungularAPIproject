@@ -20,6 +20,8 @@ export class LoginComponent {
     this.authService.login(this.username, this.password)
       .then(response => {
         if (response.success) {
+          localStorage.setItem('userId', response.rows[0].iduser);
+          console.log(localStorage.getItem('userId'));
           this.router.navigate(['/home']);
         } else {
           alert('Invalid username or password');

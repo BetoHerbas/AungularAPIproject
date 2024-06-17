@@ -18,8 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
 export class CartComponent {
   productsCartList: BuyCartItem[] = [];
   cartService: CartService = inject(CartService);
-  
-  userId = 1;
+
+  userId: number = Number(localStorage.getItem('userId'));
 
   dataSource = new MatTableDataSource<BuyCartItem>(this.productsCartList);
   displayedColumns: string[] = ['delete', 'image', 'title', 'price', 'quantity', 'subtotal'];

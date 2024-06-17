@@ -9,7 +9,7 @@ import { BuyCategoryComponent } from './pages/buy-category/buy-category.componen
 import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
     {path: 'store', component: ShopComponent},

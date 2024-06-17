@@ -20,7 +20,7 @@ export class ProductDetailComponent implements OnInit {
   product!: Product;
   quantity: number = 1;
   cartService: CartService = inject(CartService);
-  userId!: number;
+  userId: number = Number(localStorage.getItem('userId'));
 
   constructor(
     private renderer: Renderer2,
@@ -29,8 +29,7 @@ export class ProductDetailComponent implements OnInit {
     private productService: ProductService,
     private _snackBar: MatSnackBar
   ) {
-    // this.userId = this.authService.getUserId();
-    this.userId = 1;
+    
   }
 
   ngOnInit() {
