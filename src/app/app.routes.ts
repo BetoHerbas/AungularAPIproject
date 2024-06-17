@@ -7,6 +7,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BuyCategoryComponent } from './pages/buy-category/buy-category.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -17,5 +18,6 @@ export const routes: Routes = [
     {path: 'admin', component: ControlPanelComponent},
     {path: 'cart', component: CartComponent},
     {path: 'category/:category', component: BuyCategoryComponent},
+    { path: 'signup', component: SignupComponent },
     { path: '**', component: NotFoundComponent}
 ];

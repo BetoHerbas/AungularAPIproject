@@ -36,3 +36,14 @@ export const getUsers = async (req, res) => {
         res.status(500).json({ success: false, message: 'Error en la base de datos' });
     }
 };
+
+export const signUp = async (req, res) => {
+    const { name, password } = req.body;
+    try {
+      const [result] = await pool.query('INSERT INTO users (name, password) VALUES (?, ?)', [name, password]);
+      res.status(201).json({ id: result.insertId, name });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error registering user');
+    }
+  };
