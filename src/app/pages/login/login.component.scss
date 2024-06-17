@@ -20,7 +20,7 @@
     text-align: center;
     font-weight: 900;
     font-size: 30px;
-    color: rgb(16, 137, 211);
+    color: #001b3f;
   }
   
   .form {
@@ -48,7 +48,7 @@
   
   .form .input:focus {
     outline: none;
-    border-inline: 2px solid #12B1D1;
+    border-inline: 2px solid #0a58ca;
   }
   
   .form .forgot-password {
@@ -59,7 +59,7 @@
   
   .form .forgot-password a {
     font-size: 11px;
-    color: #0099ff;
+    color: #0a58ca;
     text-decoration: none;
   }
   
@@ -67,7 +67,7 @@
     display: block;
     width: 100%;
     font-weight: bold;
-    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    background: linear-gradient(45deg, #0a58ca 0%, #0a58ca 100%);
     color: white;
     padding-block: 15px;
     margin: 20px auto;
@@ -140,6 +140,6 @@
   
   .agreement a {
     text-decoration: none;
-    color: #0099ff;
+    color: #0a58ca;
     font-size: 15px;
   }

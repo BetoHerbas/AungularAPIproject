@@ -3,7 +3,7 @@
     <mat-sidenav mode="over" #sidenav>
       <a mat-list-item [routerLink]="['home']" routerLinkActive="active">Home</a>
       <a mat-list-item [routerLink]="['store']" routerLinkActive="active">Store</a>
-      <a *ngIf="isAdmin == 1" mat-list-item [routerLink]="['admin']" >Administrate</a>
+      <a *ngIf="isAdmin == 1" mat-list-item [routerLink]="['admin']">Administrate</a>
       <a mat-list-item [routerLink]="['cart']" routerLinkActive="active">Cart</a>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -21,11 +21,23 @@
             <div class="navbar-nav mx-auto">
               <a class="nav-item nav-link" [routerLink]="['home']" routerLinkActive="active">Home</a>
               <a class="nav-item nav-link" [routerLink]="['store']" routerLinkActive="active">Store</a>
-              <a *ngIf="isAdmin == 1" class="nav-item nav-link" [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
+              <a *ngIf="isAdmin == 1" class="nav-item nav-link" [routerLink]="['admin']"
+                routerLinkActive="active">Administrate</a>
             </div>
             <a class="navbar-cart ml-auto" [routerLink]="['cart']">
               <mat-icon>shopping_cart</mat-icon>
             </a>
+            <div>
+              <button class="btn" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <a mat-menu-item href="http://localhost:4200/login">
+                  <mat-icon>logout</mat-icon>
+                  <span>Log out</span>
+                </a>
+              </mat-menu>
+            </div>
           </div>
         </nav>
       </div>
