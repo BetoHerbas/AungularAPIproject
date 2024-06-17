@@ -21,7 +21,8 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showHeader = event.url !== '/login';
+        const hideHeaderRoutes = ['/login', '/signup'];
+        this.showHeader = !hideHeaderRoutes.includes(event.url);
       }
     });
   }
