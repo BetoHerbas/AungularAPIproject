@@ -1,31 +1,35 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav mode="over" #sidenav>
-    <a mat-list-item [routerLink]="['home']" routerLinkActive="active">Home</a>
-    <a mat-list-item [routerLink]="['store']" routerLinkActive="active">Store</a>
-    <a mat-list-item [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
-    <a mat-list-item [routerLink]="['cart']" routerLinkActive="active">Cart</a>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="topnav">
-      <nav class="navbar navbar-expand-lg navbar-custom">
-        <a class="navbar-brand" [routerLink]="['home']">
-          <img src="https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/logo-regular.png" alt="Logo" class="navbar-logo">
-        </a>
-        <button (click)="sidenav.toggle()" class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav mx-auto">
-            <a class="nav-item nav-link" [routerLink]="['home']" routerLinkActive="active">Home</a>
-            <a class="nav-item nav-link" [routerLink]="['store']" routerLinkActive="active">Store</a>
-            <a class="nav-item nav-link" [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
-          </div>
-          <a class="navbar-cart ml-auto" [routerLink]="['cart']">
-            <mat-icon>shopping_cart</mat-icon>
+<div *ngIf="showHeader">
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="over" #sidenav>
+      <a mat-list-item [routerLink]="['home']" routerLinkActive="active">Home</a>
+      <a mat-list-item [routerLink]="['store']" routerLinkActive="active">Store</a>
+      <a mat-list-item [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
+      <a mat-list-item [routerLink]="['cart']" routerLinkActive="active">Cart</a>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="topnav">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+          <a class="navbar-brand" [routerLink]="['home']">
+            <img src="https://websitedemos.net/furniture-shop-04/wp-content/uploads/sites/1116/2022/07/logo-regular.png"
+              alt="Logo" class="navbar-logo">
           </a>
-        </div>
-      </nav>
-    </div>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+          <button (click)="sidenav.toggle()" class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mx-auto">
+              <a class="nav-item nav-link" [routerLink]="['home']" routerLinkActive="active">Home</a>
+              <a class="nav-item nav-link" [routerLink]="['store']" routerLinkActive="active">Store</a>
+              <a class="nav-item nav-link" [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
+            </div>
+            <a class="navbar-cart ml-auto" [routerLink]="['cart']">
+              <mat-icon>shopping_cart</mat-icon>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<router-outlet></router-outlet>
