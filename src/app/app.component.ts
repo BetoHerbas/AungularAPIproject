@@ -8,6 +8,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateAdminDialogComponent } from './elements/create-admin-dialog/create-admin-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,7 @@ export class AppComponent {
   showHeader: boolean = true;
   isAdmin: number = 0;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dialog: MatDialog) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const hideHeaderRoutes = ['/login', '/signup'];
@@ -29,5 +31,8 @@ export class AppComponent {
       }
       this.isAdmin = Number(localStorage.getItem('admin'));
     });
+  }
+  onAddAdmin(){
+    const dialogRef = this.dialog.open(CreateAdminDialogComponent);
   }
 }

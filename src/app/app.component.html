@@ -32,7 +32,7 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
-                <a mat-menu-item>
+                <a *ngIf="isAdmin == 1" mat-menu-item (click)="onAddAdmin()">
                   <mat-icon>settings</mat-icon>
                   <span>Add administrator</span>
                 </a>
