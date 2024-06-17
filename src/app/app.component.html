@@ -3,7 +3,7 @@
     <mat-sidenav mode="over" #sidenav>
       <a mat-list-item [routerLink]="['home']" routerLinkActive="active">Home</a>
       <a mat-list-item [routerLink]="['store']" routerLinkActive="active">Store</a>
-      <a mat-list-item [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
+      <a *ngIf="isAdmin == 1" mat-list-item [routerLink]="['admin']" >Administrate</a>
       <a mat-list-item [routerLink]="['cart']" routerLinkActive="active">Cart</a>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -21,7 +21,7 @@
             <div class="navbar-nav mx-auto">
               <a class="nav-item nav-link" [routerLink]="['home']" routerLinkActive="active">Home</a>
               <a class="nav-item nav-link" [routerLink]="['store']" routerLinkActive="active">Store</a>
-              <a class="nav-item nav-link" [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
+              <a *ngIf="isAdmin == 1" class="nav-item nav-link" [routerLink]="['admin']" routerLinkActive="active">Administrate</a>
             </div>
             <a class="navbar-cart ml-auto" [routerLink]="['cart']">
               <mat-icon>shopping_cart</mat-icon>

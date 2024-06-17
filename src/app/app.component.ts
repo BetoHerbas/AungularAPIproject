@@ -12,11 +12,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, MatIconModule, MatSidenavModule, MatToolbarModule, MatListModule, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'angularAPIproject';
   showHeader: boolean = true;
+  isAdmin: number = 0;
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
@@ -24,6 +25,7 @@ export class AppComponent {
         const hideHeaderRoutes = ['/login', '/signup'];
         this.showHeader = !hideHeaderRoutes.includes(event.url);
       }
+      this.isAdmin = Number(localStorage.getItem('admin'));
     });
   }
 }

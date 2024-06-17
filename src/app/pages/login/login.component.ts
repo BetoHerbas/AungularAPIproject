@@ -21,6 +21,7 @@ export class LoginComponent {
       .then(response => {
         if (response.success) {
           localStorage.setItem('userId', response.rows[0].iduser);
+          localStorage.setItem('admin', response.rows[0].admin);
           console.log(localStorage.getItem('userId'));
           this.router.navigate(['/home']);
         } else {
