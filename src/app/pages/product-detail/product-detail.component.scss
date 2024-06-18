@@ -1,99 +1,188 @@
-.product-detail-container {
+*{
+  margin: 0;
+}
+
+.productContainer {
   display: flex;
+  flex-basis: 100%;
+  height: 100vh;
   flex-direction: row;
+  justify-content: space-between;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.productImgContainer {
+  display: flex;
   height: 100%;
-}
-
-.product-image, .product-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.product-image img {
-  width: 100%;
-  align-items: center;
-  height: auto;
-  border-radius: 10px;
-}
-
-.example-card {
-  width: 100vw;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vw;
-}
-
-.mat-card-header, .mat-card-content, .mat-card-actions {
-  padding: 16px;
-}
-
-.mat-card-title {
-  font-size: 1.5em;
-  color: #333;
-}
-
-.mat-card-subtitle p {
-  font-size: 1.2em;
-  color: #555;
-}
-
-.mat-card-content p {
-  font-size: 1em;
-  color: #666;
-}
-
-.mat-card-actions {
-  display: flex;
+  flex-basis: 48%;
+  
   justify-content: space-between;
 }
 
-button.mat-button {
-  background-color: #6200ea;
-  color: #fff;
+.asideImgContainer {
+  display: flex;
+  flex-basis: 20%;
+  height: 100%;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.asideImgContainer img {
+  width: 100%;
+  height: auto;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.mainImgProduct {
+  display: flex;
+  height: 100%;
+  flex-basis: 78%;
+  
+}
+
+.mainImgProduct img {
+  width: 100%;
+  height: min-content;
+}
+
+.productDetailsContainer {
+  display: flex;
+  flex-basis: 48%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.priceDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.price{
+  color: #b79b86;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.orderForm {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 338px) {
+  .orderForm {
+      flex-direction: column;
+      gap:8px
+  }
+}
+
+.paymentCards {
+  display: flex;
+  height: auto;    
+  border: #dddddd 0.1px solid;
   border-radius: 5px;
+  margin-bottom: 15px;
+  flex-direction: column;
+  padding: 2%;
 }
 
-button.mat-button:hover {
-  background-color: #3700b3;
-}
-button.custom-button {
-  font-size: 1.25em; 
-  padding: 12px 24px; 
-}
-
-.quantity-container {
+.paymentCards ul {
+  list-style: none;
   display: flex;
+  width: 100%;
+  height: auto;
+  padding: 0;
   justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-  width: 25vw;
+  gap:15px;
+  flex-wrap: wrap;
 }
 
-.buttons{
-  margin-top: 10vw;
-  display: flex;
-  align-items: center;
-  width: 50%;
+.paymentCards svg {
+  fill: #5b5b5b;
 }
 
+.paymentCards ul li {
+  width: 50px;
+  height: auto;
+}
+.checkList {
+  list-style: none;
+  padding: 0;
+}
+.checkList li svg{
+  width: 12px;
+  height: auto;
+  fill: #5b5b5b;
+}
 
-@media (max-width: 768px) {
-  .product-detail-container {
-    flex-direction: column;
+.checkList li {
+  font-size: 15px;
+  color: #5b5b5b;
+}
+
+button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 8px 10%;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+legend{
+  font-weight: 600;
+  font-size: 15px;
+  color: #5b5b5b;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .AllProductInfo {
+      padding-left: 5%;
+      padding-right: 5%;
   }
 
-  .product-image, .product-info {
-    flex: 1 1 100%;
+  .productContainer{
+      height: auto;
+      flex-direction: column;
   }
+  .productImgContainer{
+      margin-bottom: 5%;
+  }
+}
+label{
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #5b5b5b;
+}
 
-  .product-image img {
-    width: 100%;
+@media screen and (min-width: 580px) and (max-width: 900px) {
+  .related-products-title{
+      font-size: 50px;
   }
+}
+
+@media screen and (max-width: 579px) {
+  .related-products-title{
+      font-size: 31px;
+  }
+}
+
+.input-group-text{
+  font-family: "Oswald", sans-serif;;
+}
+
+h1{
+  font-family: "Oswald", sans-serif;
 }
