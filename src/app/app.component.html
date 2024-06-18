@@ -1,10 +1,32 @@
 <div *ngIf="showHeader">
   <mat-sidenav-container class="example-container">
     <mat-sidenav mode="over" #sidenav>
-      <a mat-list-item [routerLink]="['home']" routerLinkActive="active">Home</a>
-      <a mat-list-item [routerLink]="['store']" routerLinkActive="active">Store</a>
-      <a *ngIf="isAdmin == 1" mat-list-item [routerLink]="['admin']">Administrate</a>
-      <a mat-list-item [routerLink]="['cart']" routerLinkActive="active">Cart</a>
+      <mat-nav-list>
+        <a mat-menu-item [routerLink]="['home']" routerLinkActive="active">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </a>
+        <a mat-menu-item [routerLink]="['store']" routerLinkActive="active">
+          <mat-icon>store</mat-icon>
+          <span>Store</span>
+        </a>
+        <a mat-menu-item [routerLink]="['cart']" routerLinkActive="active">
+          <mat-icon>shopping_cart</mat-icon>
+          <span>Cart</span>
+        </a>
+        <a *ngIf="isAdmin == 1" mat-menu-item [routerLink]="['admin']">
+          <mat-icon>settings</mat-icon>
+          <span>Administrate</span>
+        </a>
+        <a *ngIf="isAdmin == 1" mat-menu-item (click)="onAddAdmin()">
+          <mat-icon>settings</mat-icon>
+          <span>Add administrator</span>
+        </a>
+        <a mat-menu-item href="http://localhost:4200/login">
+          <mat-icon>logout</mat-icon>
+          <span>Log out</span>
+        </a>
+      </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="topnav">
@@ -47,7 +69,7 @@
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
-    
+
   </mat-sidenav-container>
 </div>
 <router-outlet *ngIf="!showHeader"></router-outlet>
