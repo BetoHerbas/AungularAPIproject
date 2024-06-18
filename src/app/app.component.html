@@ -44,8 +44,10 @@
             </div>
           </div>
         </nav>
+        <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
+    
   </mat-sidenav-container>
 </div>
-<router-outlet></router-outlet>
+<router-outlet *ngIf="!showHeader"></router-outlet>
