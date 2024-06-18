@@ -47,3 +47,35 @@ export const signUp = async (req, res) => {
       res.status(500).send('Error registering user');
     }
   };
+
+  export const getUsersByName = async (req, res) => {
+    const { name } = req.params;
+    try {
+      const [rows] = await pool.query('SELECT * FROM users WHERE name = ?', [name]);
+      res.json(rows);
+    } catch (error) {
+      console.error('Error retrieving users by name:', error);
+      res.status(500).send('Error retrieving users');
+    }
+  };
+
+// export const signUp = async (req, res) => {
+//     const { name, password, admin } = req.body;
+  
+//     try {
+//       // Verificar si el usuario ya existe
+//       const [existingUsers] = await pool.query('SELECT * FROM users WHERE name = ?', [name]);
+  
+//       if (existingUsers.length > 0) {
+//         return res.status(400).json({ message: 'Username already exists' });
+//       }
+  
+//       // Insertar el nuevo usuario
+//       const [result] = await pool.query('INSERT INTO users (name, password, admin) VALUES (?, ?)', [name, password, admin]);
+  
+//       res.json({ id: result.insertId, name, password });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).send('Error creating user');
+//     }
+//   };

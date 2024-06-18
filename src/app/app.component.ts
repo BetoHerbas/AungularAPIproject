@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAdminDialogComponent } from './elements/create-admin-dialog/create-admin-dialog.component';
 import { AuthService } from './services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ export class AppComponent {
   showHeader: boolean = true;
   isAdmin: number = 0;
 
-  constructor(private router: Router, private dialog: MatDialog, private authService: AuthService) {
+  constructor(private router: Router, private dialog: MatDialog, private authService: AuthService, private _snackBar: MatSnackBar) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const hideHeaderRoutes = ['/login', '/signup'];
@@ -40,10 +41,17 @@ export class AppComponent {
         try {
           const response = await this.authService.signUp(newAdmin);
           console.log('User registered successfully', response);
+          this.showSnackBar('User registered successfully');
         } catch (error) {
           console.error('Error registering user', error);
+          this.showSnackBar('Error: Username already exists. Please try again.');
         }
       }
     });
-}
+  }
+  showSnackBar(message: string) {
+    this._snackBar.open(message, 'Close', {
+      duration: 3000
+    });
+  }
 }

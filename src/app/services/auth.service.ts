@@ -28,6 +28,12 @@ export class AuthService {
   }
 
   async signUp(user: { name: string; password: string; admin: number }): Promise<any> {
+    const userExists = await this.userExists(user.name);
+
+    if (userExists) {
+      throw new Error('Username already exists');
+    }
+
     try {
       const response = await fetch(`${this.apiUrl}/signup`, {
         method: 'POST',
@@ -46,6 +52,12 @@ export class AuthService {
       console.error('Error during sign up', error);
       throw error;
     }
+  }
+
+  async userExists(name: string): Promise<boolean> {
+    const response = await fetch(`${this.apiUrl}/users/${name}`);
+    const users = await response.json();
+    return users.length > 0;
   }
 
 }
