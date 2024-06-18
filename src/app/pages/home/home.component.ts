@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { CategoriesComponent } from '../../elements/categories/categories.component';
 import { CategoryService } from '../../services/category.service';
 import { FooterComponent } from '../../elements/footer/footer.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-home',
@@ -29,4 +30,7 @@ export class HomeComponent {
       this.categoriesList = categoriesList;
     });
   }
+  redirect() {
+    window.location.href = "http://localhost:4200/store";
+}
 }
